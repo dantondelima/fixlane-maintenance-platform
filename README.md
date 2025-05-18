@@ -1,4 +1,4 @@
-# Loola – Smart Maintenance Scheduling Platform
+# Fixlane – Smart Maintenance Scheduling Platform
 
 built to simplify property maintenance through smart automation, scheduling, and contractor coordination.
 
