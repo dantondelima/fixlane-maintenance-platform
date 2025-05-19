@@ -1,11 +1,17 @@
 version: "3.8"
-name: loola
+name: fixlane
 
 services:
   app:
     build:
       context: .
       dockerfile: docker/app/Dockerfile
+    healthcheck:
+      test: ["CMD", "php", "artisan", "config:show", "app.key"]
+      interval: 3s
+      timeout: 2s
+      retries: 5
+      start_period: 5s
     user: "${UID:-1000}:${GID:-1000}"
     working_dir: /app
     volumes:
@@ -17,7 +23,7 @@ services:
     depends_on:
       - db
     networks:
-      - loola_shared
+      - fixlane_shared
 
   nginx:
     image: nginx:stable-alpine
@@ -29,23 +35,23 @@ services:
     depends_on:
       - app
     networks:
-      - loola_shared
+      - fixlane_shared
 
   db:
     image: mariadb:11
     environment:
       MARIADB_ROOT_PASSWORD: password
-      MARIADB_DATABASE: loola
+      MARIADB_DATABASE: fixlane
     ports:
       - "3306:3306"
     volumes:
       - db:/var/lib/mysql
     networks:
-      - loola_shared
+      - fixlane_shared
 
 networks:
-  loola_shared:
-    name: loola_shared  
+  fixlane_shared:
+    name: fixlane_shared  
 
 volumes:
   db:
