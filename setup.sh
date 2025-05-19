@@ -21,3 +21,5 @@ echo "🔁 Restarting containers to reload environment with correct APP_KEY..."
 sleep 1
 docker compose down
 docker compose up -d
+
+✅ "Application ready for use! 🚀"
