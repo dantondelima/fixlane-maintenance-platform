@@ -15,8 +15,8 @@ services:
     volumes:
       - ./data:/data:delegated
     networks:
-      - loola_shared
+      - fixlane_shared
 
 networks:
-  loola_shared:
-    name: loola_shared
+  fixlane_shared:
+    name: fixlane_shared
