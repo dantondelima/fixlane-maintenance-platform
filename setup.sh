@@ -10,14 +10,14 @@ fi
 echo "🔧 Building and starting containers (first boot)..."
 docker compose up --build -d
 
-echo "⏳ Waiting for Laravel to generate APP_KEY..."
-APP_KEY=""
-while [ -z "$APP_KEY" ]; do
-  APP_KEY=$(docker compose exec -T app php artisan config:show app.key 2>/dev/null || echo "")
+
+echo "⏳ Waiting for Laravel container to become healthy..."
+
+while [ "$(docker inspect --format='{{.State.Health.Status}}' fixlane-app-1 2>/dev/null)" != "healthy" ]; do
   sleep 1
 done
 
-echo "✅ APP_KEY detected: $APP_KEY"
 echo "🔁 Restarting containers to reload environment with correct APP_KEY..."
+sleep 1
 docker compose down
 docker compose up -d
