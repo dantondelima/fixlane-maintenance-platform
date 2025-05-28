@@ -5,16 +5,16 @@ declare(strict_types=1);
 namespace Database\Factories;
 
 use App\Models\City;
-use App\Models\Country;
-use App\Models\State;
 use App\Models\User;
+use App\Models\State;
+use App\Models\Country;
+use App\Models\UserAddress;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\UserAddress>
- */
 class UserAddressFactory extends Factory
 {
+    protected $model = UserAddress::class;
+
     public function definition(): array
     {
         return [
