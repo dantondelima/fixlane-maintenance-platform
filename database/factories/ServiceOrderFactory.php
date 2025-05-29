@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories;
 
 use App\Models\ServiceCategory;
-use App\Models\User;
 use App\Models\ServiceOrder;
+use App\Models\User;
 use App\States\ServiceOrder\ServiceOrderState;
 use Illuminate\Database\Eloquent\Factories\Factory;
 

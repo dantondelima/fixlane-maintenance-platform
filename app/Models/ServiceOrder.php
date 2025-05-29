@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use App\States\ServiceOrder\ServiceOrderState;
@@ -10,7 +12,7 @@ use Spatie\ModelStates\HasStates;
 
 class ServiceOrder extends Model
 {
-    use HasFactory, HasUlids, HasStates;
+    use HasFactory, HasStates, HasUlids;
 
     protected $table = 'service_orders';
 
