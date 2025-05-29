@@ -17,8 +17,11 @@ if [ "$APP_ENV" = "local" ]; then
         echo "🔑 Running artisan key:generate (local development)..."
         php artisan key:generate
 
+        echo "🧹 Clearing config cache..."
+        php artisan config:clear
+
         echo "🎯 Running database migrations and seeds (local development)..."
-        php artisan migrate
+        php artisan migrate --seed
     fi
 else
     # In production environment
