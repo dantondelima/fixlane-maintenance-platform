@@ -1,15 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories;
 
-use App\Models\User;
 use App\Models\Manager;
+use App\Models\User;
 use App\States\Manager\ManagerState;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Manager>
- */
 class ManagerFactory extends Factory
 {
     protected $model = Manager::class;
