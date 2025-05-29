@@ -40,7 +40,7 @@ built to simplify property maintenance through smart automation, scheduling, and
 
 ### 🛠️ Maintenance Request Flow
 
-- [ ]  Create models and migrations for maintenance requests
+- [X]  Create models and migrations for maintenance requests
 - [ ]  Tenant request submission API
 - [ ]  Status lifecycle: Pending → Assigned → In Progress → Completed
 - [ ]  Assign contractors to jobs
