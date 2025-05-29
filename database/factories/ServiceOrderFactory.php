@@ -19,7 +19,6 @@ class ServiceOrderFactory extends Factory
         $status = ServiceOrderState::all()->random();
 
         return [
-            'user_id' => User::factory(),
             'service_category_id' => ServiceCategory::factory(),
             'manager_user_id' => User::factory(),
             'contractor_user_id' => User::factory(),

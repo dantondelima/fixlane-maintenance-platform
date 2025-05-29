@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('service_category_id')->constrained('service_categories');
             $table->foreignUlid('contractor_user_id')->constrained('users')->nullable();
             $table->text('description');
-            $table->status('status')->default(Pending::$name)->index();
+            $table->string('status', 50)->default(Pending::$name)->index();
             $table->dateTime('expected_start_at');
             $table->timestamps();
         });
